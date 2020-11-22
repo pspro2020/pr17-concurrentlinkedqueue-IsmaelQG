@@ -10,12 +10,9 @@ public class Cinta {
 	
 	private DateTimeFormatter format = DateTimeFormatter.ofPattern("HH:mm:ss");
 	private ConcurrentLinkedQueue<Elemento> separador = new ConcurrentLinkedQueue<>();
-	private int idElemento = -1;
 	
-	public void accionarTolva(int idTolva) {
-		synchronized(this) {
-			separador.add(new Elemento(idTolva, ++idElemento));
-		}
+	public void accionarTolva(int idTolva, int idElemento) {
+		separador.add(new Elemento(idTolva, idElemento));
 	}
 	
 	public void clasificar() throws InterruptedException {
