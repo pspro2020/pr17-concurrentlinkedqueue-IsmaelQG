@@ -21,7 +21,7 @@ public class Tolva implements Runnable{
 		System.out.printf("%s -> Tolva nº: %d encendida\n", LocalTime.now().format(format), id);
 		for(int i=0; i<5; i++) {
 			try {
-				cinta.accionarTolva(id, i);
+				cinta.accionarTolva(new Elemento(id, i));
 				TimeUnit.SECONDS.sleep(ThreadLocalRandom.current().nextInt(1,3));
 			}
 			catch (InterruptedException e) {

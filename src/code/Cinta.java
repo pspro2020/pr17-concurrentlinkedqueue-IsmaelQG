@@ -11,8 +11,8 @@ public class Cinta {
 	private DateTimeFormatter format = DateTimeFormatter.ofPattern("HH:mm:ss");
 	private ConcurrentLinkedQueue<Elemento> separador = new ConcurrentLinkedQueue<>();
 	
-	public void accionarTolva(int idTolva, int idElemento) {
-		separador.add(new Elemento(idTolva, idElemento));
+	public void accionarTolva(Elemento e) {
+		separador.add(e);
 	}
 	
 	public void clasificar() throws InterruptedException {
