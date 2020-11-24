@@ -7,6 +7,7 @@ public class Main {
 	public static void main(String[] args) throws InterruptedException {
 
 		Cinta cinta = new Cinta();
+		Thread cintaThread = new Thread(cinta);
 		Thread tolvaThread;
 		for(int i=0; i<5; i++) {
 			tolvaThread = new Thread(new Tolva(cinta ,i));
@@ -15,7 +16,7 @@ public class Main {
 		
 		TimeUnit.SECONDS.sleep(3);
 		
-		cinta.clasificar();
+		cintaThread.start();
 	}
 
 }
